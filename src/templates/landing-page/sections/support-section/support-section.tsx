@@ -1,4 +1,6 @@
+'use client'
 import { HeartHandshake, PaintbrushVertical, Store } from 'lucide-react';
+import { motion } from "motion/react"
 
 export const SupportSection = () => {
   return (
@@ -13,46 +15,63 @@ export const SupportSection = () => {
         </h2>
 
         <div className="grid gap-6 md:grid-cols-3">
-          <div className="flex flex-col text-left gap-2 rounded-lg p-6 md:p-12 bg-blue-400">
-            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-300 mb-4">
-              <PaintbrushVertical className="h-6 w-6 text-white" />
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <div className="flex flex-col text-left gap-2 rounded-lg p-6 md:p-12 bg-blue-400">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-300 mb-4">
+                <PaintbrushVertical className="h-6 w-6 text-white" />
+              </div>
+              <strong className="text-heading-sm text-gray-100">
+                Personalize seu site
+              </strong>
+              <p className="text-body-sm text-gray-200">
+                Adicione sua logo, favicon, cores no seu catálogo e tenha tudo com
+                a sua cara.
+              </p>
             </div>
-            <strong className="text-heading-sm text-gray-100">
-              Personalize seu site
-            </strong>
-            <p className="text-body-sm text-gray-200">
-              Adicione sua logo, favicon, cores no seu catálogo e tenha tudo com
-              a sua cara.
-            </p>
-          </div>
+          </motion.div>
+
 
           {/* Segundo Card */}
-          <div className="flex flex-col text-left gap-2 rounded-lg p-6 md:p-12 bg-cyan-300">
-            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-cyan-200 mb-4">
-              <Store className="h-6 w-6 text-white" />
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <div className="flex flex-col text-left gap-2 rounded-lg p-6 md:p-12 bg-cyan-300">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-cyan-200 mb-4">
+                <Store className="h-6 w-6 text-white" />
+              </div>
+              <strong className="text-heading-sm text-gray-100">
+                Venda de qualquer loja
+              </strong>
+              <p className="text-body-sm text-gray-200">
+                Não importa a loja, o Site.Set permite que você insira qualquer
+                link de afiliado.
+              </p>
             </div>
-            <strong className="text-heading-sm text-gray-100">
-              Venda de qualquer loja
-            </strong>
-            <p className="text-body-sm text-gray-200">
-              Não importa a loja, o Site.Set permite que você insira qualquer
-              link de afiliado.
-            </p>
-          </div>
+          </motion.div>
 
           {/* Terceiro Card */}
-          <div className="flex flex-col text-left gap-2 rounded-lg p-6 md:p-12 bg-blue-400">
-            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-300 mb-4">
-              <HeartHandshake className="h-6 w-6 text-white" />
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <div className="flex flex-col text-left gap-2 rounded-lg p-6 md:p-12 bg-blue-400">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-300 mb-4">
+                <HeartHandshake className="h-6 w-6 text-white" />
+              </div>
+              <strong className="text-heading-sm text-gray-100">
+                Receba suporte amigável
+              </strong>
+              <p className="text-body-sm text-gray-200">
+                Nossa equipe estará sempre pronta para te atender para ajudar no
+                que for preciso.
+              </p>
             </div>
-            <strong className="text-heading-sm text-gray-100">
-              Receba suporte amigável
-            </strong>
-            <p className="text-body-sm text-gray-200">
-              Nossa equipe estará sempre pronta para te atender para ajudar no
-              que for preciso.
-            </p>
-          </div>
+          </motion.div>
+
         </div>
       </div>
     </section>
