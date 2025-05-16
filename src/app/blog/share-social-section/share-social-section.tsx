@@ -33,10 +33,12 @@ export const ShareSocialSection = ({ post }: ShareSocialSectionProps) => {
               key={provider.provider}
               onClick={() => provider.action()}
               variant="outline"
-              className="w-full justify-start gap-2"
+              className="md:w-full justify-start gap-2"
             >
               {provider.icon}
-              {provider.name}
+              <span className='hidden md:block'>
+                {provider.name}
+              </span>
             </Button>
           ))}
         </div>

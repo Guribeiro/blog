@@ -28,13 +28,9 @@ export default async function PostPage({ params }: PostPage) {
   )!;
   const publishedDate = new Date(post?.date).toLocaleDateString('pt-BR');
 
-
-
-
   return (
-    <main className="mt-32 text-gray-100">
-      <div className="container space-y-12 px-4 md:px-8">
-
+    <main className="py-20 text-gray-100">
+      <div className="container space-y-8 px-4 md:px-8">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -48,7 +44,6 @@ export default async function PostPage({ params }: PostPage) {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6 lg:gap-12">
           <article className="bg-gray-600 rounded-lg overflow-hidden border-gray-400 border-[1px]">
