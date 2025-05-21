@@ -1,14 +1,29 @@
+'use client'
+
 import { cn } from '@/lib/utils';
 import Link, { LinkProps } from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname, useRouter } from 'next/navigation';
 
 type ActiveLinkProps = {
   children: React.ReactNode;
 } & LinkProps;
 
 export const ActiveLink = ({ children, href, ...rest }: ActiveLinkProps) => {
-  const router = useRouter();
-  const isCurrentPath = router.asPath === href || router.asPath === rest.as;
+  const pathname = usePathname();
+  const linkHref = href.toString();
+
+  let isCurrentPath = false;
+
+  // Special handling for the root path "/"
+  if (linkHref === '/') {
+    isCurrentPath = pathname === '/';
+  } else {
+    // For other paths, check if the pathname starts with the link's href
+    // and ensure it's either an exact match or followed by a slash
+    isCurrentPath = pathname.startsWith(linkHref) &&
+      (pathname.length === linkHref.length || pathname.charAt(linkHref.length) === '/');
+  }
+
 
   return (
     <Link

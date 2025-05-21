@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link';
 import { ActiveLink } from '../../active-link';
 import { Button } from '../../ui/button';
@@ -12,8 +14,8 @@ export const Header = () => {
 
           <nav className="flex items-center gap-6">
 
-            {/* <ActiveLink href="/">Início</ActiveLink>
-            <ActiveLink href="/blog">Blog</ActiveLink> */}
+            <ActiveLink href="/">Início</ActiveLink>
+            <ActiveLink href="/blog">Blog</ActiveLink>
             <Button variant="secondary" asChild>
               <Link href="/comecar">Começar</Link>
             </Button>

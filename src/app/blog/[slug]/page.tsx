@@ -12,9 +12,8 @@ import {
 } from '@/components/ui/breadcrumb';
 import { Avatar } from '@/components/avatar';
 import { Markdown } from '@/components/markdown';
-import { Button } from '@/components/ui/button';
-import { useShare } from '@/hooks/use-share/use-share';
 import { ShareSocialSection } from '../share-social-section/share-social-section';
+import { notFound } from 'next/navigation';
 
 type PostPage = {
   params: Promise<{ slug: string }>
@@ -26,6 +25,11 @@ export default async function PostPage({ params }: PostPage) {
   const post = allPosts.find(
     (post) => post.slug.toLowerCase() === slug.toLowerCase()
   )!;
+
+  if (!post) {
+    notFound()
+  }
+
   const publishedDate = new Date(post?.date).toLocaleDateString('pt-BR');
 
   return (
